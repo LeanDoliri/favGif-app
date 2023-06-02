@@ -1,0 +1,42 @@
+.GifCard {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.GifImg {
+  max-width: 100%;
+  border-radius: 6px;
+  outline: 2px solid var(--primary-color);
+}
+
+.TitleGif {
+  background: var(--bg-color);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0%,
+    var(--accent-color) 100%
+  );
+  max-width: 50%;
+  border-radius: 0px 3px 0px 6px;
+  color: var(--bg-color);
+  font-size: 0.5em;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0.5em;
+  margin: 0;
+  position: absolute;
+  bottom: 0%;
+}
+
+.AddToFav {
+  background-color: rgb(45, 42, 50, 1);
+  border-radius: 3px 0px 6px 0px;
+  padding: 0 0.2em;
+  margin: 0;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}

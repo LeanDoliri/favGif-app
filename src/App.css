@@ -1,0 +1,18 @@
+.App {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, 1fr) 7fr;
+  justify-content: center;
+  justify-items: center;
+  align-items: start;
+  gap: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    width: 100%;
+  }
+}

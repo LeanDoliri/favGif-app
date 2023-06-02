@@ -1,0 +1,14 @@
+.ListOfGifs {
+  max-width: 1080px;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.5em;
+  margin: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .ListOfGifs {
+    max-width: 100%;
+  }
+}

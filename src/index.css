@@ -1,0 +1,31 @@
+:root {
+  font-family: 'Kodchasan', sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --primary-font: 'Kodchasan', sans-serif;
+
+  --text-color: #fcfaff;
+  --bg-color: #070014;
+  --bg-secondary-color: #3e374e;
+  --primary-color: #b696fd;
+  --accent-color: #ff955c;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color)
+}
