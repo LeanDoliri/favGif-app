@@ -1,4 +1,5 @@
 import { useLocation } from "wouter";
+import heart from "../../assets/heart.svg";
 import "./GifCard.css";
 
 export function GifCard({ title, id, url }) {
@@ -8,13 +9,16 @@ export function GifCard({ title, id, url }) {
   }
 
   return (
-    <div onClick={handleClick} className="GifCard">
-      {title !== "" ? (
-        <p className="TitleGif">{title}</p>
-      ) : (
-        <p className="TitleGif">...</p>
-      )}
-      <img src={url} alt={title} className="GifImg" />
+    <div className="GifCard">
+      <img onClick={handleClick} src={url} alt={title} className="GifImg" />
+      <div className="GifCard-data">
+        {title !== "" ? (
+          <p className="TitleGif">{title}</p>
+        ) : (
+          <p className="TitleGif">...</p>
+        )}
+        <img src={heart} alt="add to favs" className="AddToFav" />
+      </div>
     </div>
   );
 }
