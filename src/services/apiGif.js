@@ -24,7 +24,7 @@ export async function getGifById ({ id } = {}) {
   const gif = {
     id: data.id,
     title: data.title,
-    url: data.images.original.url,
+    url: data.images.downsized_medium.url,
     username: data.username,
     source: data.source
   }
