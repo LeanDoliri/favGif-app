@@ -1,23 +1,33 @@
-import { useLocation } from "wouter";
-import heart from "../../assets/heart.svg";
 import "./GifCard.css";
+import { BtnAddToFavs, BtnDeleteFromFavs } from "../Buttons/Buttons";
+import { useFavs } from "../../hooks/useFavs";
 
-export function GifCard({ title, id, url }) {
-  const [path, pushLocation] = useLocation();
-  function handleClick() {
-    pushLocation(`/gif/${id}`);
+export function GifCard({ gif }) {
+  const { id, title, url } = gif;
+  const { favs } = useFavs();
+
+  function checkGifInFavs({ id }) {
+    return favs.some((gif) => gif.id === id);
   }
+
+  const isInFavs = checkGifInFavs({ id: gif.id });
 
   return (
     <div className="GifCard">
-      <img onClick={handleClick} src={url} alt={title} className="GifImg" />
+      <a href={`/gif/${id}`}>
+        <img src={url} alt={title} className="GifImg" />
+      </a>
       <div className="GifCard-data">
         {title !== "" ? (
           <p className="TitleGif">{title}</p>
         ) : (
           <p className="TitleGif">...</p>
         )}
-        <img src={heart} alt="add to favs" className="AddToFav" />
+        {isInFavs ? (
+          <BtnDeleteFromFavs gif={gif} />
+        ) : (
+          <BtnAddToFavs gif={gif} />
+        )}
       </div>
     </div>
   );

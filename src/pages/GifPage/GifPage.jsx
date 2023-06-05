@@ -3,6 +3,8 @@ import { Title } from "../../Components/Title/Title";
 import { Spinner } from "../../Components/Spinner/Spinner";
 import { useGifById } from "../../hooks/useGifByID";
 import { Subtitle } from "../../Components/Subtitle/Subtitle";
+import { SingleGif } from "../../Components/SingleGif/SingleGif";
+import { Favs } from "../../Components/Favs/Favs";
 
 export function GifPage({ params }) {
   const { id } = params;
@@ -15,11 +17,12 @@ export function GifPage({ params }) {
       {loading ? (
       <Spinner />
       ) : (
-        <div>
+        <main>
           <Subtitle text={gif.title}/>
-          <img src={gif.url} alt={gif.title}/>
-        </div>
+          <SingleGif gif={gif} />
+        </main>
       )}
+      <Favs />
     </>
   );
 }

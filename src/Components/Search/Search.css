@@ -6,8 +6,7 @@
   width: 100%;
 }
 
-.Search-Input,
-.Search-Input:focus {
+.Search-Input {
   font-family: var(--primary-font);
   font-size: 2em;
   color: var(--text-color);
@@ -16,6 +15,10 @@
   outline: none;
   border-radius: 6px;
   padding: 0.2em;
+}
+
+.Search-Input:focus {
+  outline: 2px solid var(--accent-color);
 }
 
 .Search-Input::placeholder {

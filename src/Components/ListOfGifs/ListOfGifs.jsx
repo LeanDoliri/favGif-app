@@ -6,7 +6,7 @@ export function ListOfGifs({ gifs }) {
     <main>
       <ul className="ListOfGifs">
         {gifs.map((gif) => (
-          <GifCard key={gif.id} id={gif.id} title={gif.title} url={gif.url} />
+          <GifCard key={gif.id} gif={gif} />
         ))}
       </ul>
     </main>
