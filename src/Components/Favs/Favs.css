@@ -61,7 +61,7 @@
 .ListOfFavs {
   padding: 0.5em;
   margin: 0;
-  width: 100%;
+  width: 95%;
   max-height: 95%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));

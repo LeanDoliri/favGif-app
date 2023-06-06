@@ -14,7 +14,7 @@ export function SearchResults({ params }) {
     <>
       <Title />
       <Search />
-      <Subtitle text={`Resultados de la búsqueda "${keyword}": `} />
+      <Subtitle text={`Resultados de la búsqueda "${decodeURIComponent(keyword)}": `} />
       {loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}
       <Favs />
     </>

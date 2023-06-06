@@ -1,7 +1,7 @@
 const apiKey = "i9G4hj7FcpIiHkedYC5770WxoXMJuij5";
 
-export async function getGifs({ keyword = "nemo" } = {}) {
-  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=25&offset=0&rating=g&lang=es`;
+export async function getGifs({ keyword = "random" } = {}) {
+  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=50&offset=0&rating=g&lang=es`;
 
   const res = await fetch(apiURL);
   const resJson = await res.json();

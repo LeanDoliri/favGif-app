@@ -4,6 +4,7 @@ import { FavsIcon } from "../../assets/Icons";
 import { useFavs } from "../../hooks/useFavs";
 import { GifCard } from "../GifCard/GifCard";
 import { Subtitle } from "../Subtitle/Subtitle";
+import Masonry from "react-masonry-css";
 
 export function Favs() {
   const favsCheckBoxId = useId();
@@ -22,11 +23,11 @@ export function Favs() {
       </label>
       <aside className="Favs">
         <Subtitle text={"My Favs Gifs: "} />
-        <ul className="ListOfFavs">
+        <Masonry breakpointCols={2} className="ListOfFavs my-masonry-grid" columnClassName="my-masonry-grid_column">
           {favs.map((gif) => (
             <GifCard key={gif.id} gif={gif} />
           ))}
-        </ul>
+        </Masonry>
       </aside>
     </>
   );

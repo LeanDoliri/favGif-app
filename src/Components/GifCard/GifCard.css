@@ -1,6 +1,5 @@
 .GifCard {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   outline: 2px solid var(--primary-color);
