@@ -4,7 +4,7 @@ import { Title } from "../../Components/Title/Title";
 import { Subtitle } from "../../Components/Subtitle/Subtitle";
 import { ListOfGifs } from "../../Components/ListOfGifs/ListOfGifs";
 import { Container, Row, Spinner } from "react-bootstrap";
-import { FavsOffCanvas } from "../../Components/FavsOffCanvas/FavsOffcanvas";
+import { FavsOffCanvas } from "../../Components/FavsOffCanvas/FavsOffCanvas";
 
 
 export function Home() {
