@@ -6,10 +6,11 @@ import { ListOfGifs } from "../../Components/ListOfGifs/ListOfGifs";
 import { Container, Row, Spinner } from "react-bootstrap";
 import { FavsOffCanvas } from "../../Components/FavsOffCanvas/FavsOffCanvas";
 import { TrendingSearch } from "../../Components/TrendingSearch/TrendingSearch";
+import { useTrending } from "../../hooks/useTrending";
 
 
 export function Home() {
-  const { loading, gifs } = useGifs();
+  const { loading, gifs } = useTrending();
 
   return (
     <Container>
@@ -23,7 +24,6 @@ export function Home() {
         <main className="d-flex flex-column align-items-center container-fluid p-0">
           <Subtitle text={"Tendencias: "} />
           <TrendingSearch />
-          <Subtitle text={"Última búsqueda: "} />
           {loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}
         </main>
       </Row>

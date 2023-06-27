@@ -8,7 +8,7 @@ export async function getGifs({ keyword = "random" } = {}) {
   const { data } = resJson;
   const gifs = data.map((gif) => {
     const { images, title, id } = gif;
-    const { url } = images.downsized_medium;
+    const { url } = images.fixed_width_downsampled;
     return { title, id, url };
   });
 
@@ -33,11 +33,26 @@ export async function getGifById({ id } = {}) {
 }
 
 export async function getTrendingSearch() {
-  const apiUrl = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
+  const apiURL = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
 
-  const res = await fetch(apiUrl);
+  const res = await fetch(apiURL);
   const resJson = await res.json();
   const { data } = resJson;
 
   return data;
+}
+
+export async function getTrending() {
+  const apiURL = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25&offset=0&rating=g&bundle=messaging_non_clips`;
+
+  const res = await fetch(apiURL);
+  const resJson = await res.json();
+  const { data } = resJson;
+  const gifs = data.map((gif) => {
+    const { images, title, id } = gif;
+    const { url } = images.fixed_width_downsampled;
+    return { title, id, url };
+  });
+
+  return gifs;
 }
