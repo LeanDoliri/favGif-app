@@ -19,7 +19,7 @@ export function Home() {
       </Row>
       <Row>
         <main className="d-flex flex-column align-items-center container-fluid p-0">
-          <Subtitle text={"Tendencias: "} />
+          <Subtitle text={"↗️ Tendencias: "} />
           <TrendingSearch />
           <ListOfGifs
             gifs={gifs}

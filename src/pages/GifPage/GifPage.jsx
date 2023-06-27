@@ -25,12 +25,12 @@ export function GifPage({ params }) {
             <Spinner />
           ) : (
             <>
-              <Subtitle text={gif.title} />
+              <Subtitle text={`⭐ ${gif.title}`} />
               <SingleGif gif={gif} />
             </>
           )}
 
-          <Subtitle text={"Tendencias: "} />
+          <Subtitle text={"↗️ Tendencias: "} />
           <TrendingSearch />
         </main>
       </Row>
