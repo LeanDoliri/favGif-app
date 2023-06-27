@@ -4,7 +4,7 @@ import { useGifById } from "../../hooks/useGifByID";
 import { Subtitle } from "../../Components/Subtitle/Subtitle";
 import { SingleGif } from "../../Components/SingleGif/SingleGif";
 import { Container, Row, Spinner } from "react-bootstrap";
-import { FavsOffCanvas } from "../../Components/FavsOffCanvas/FavsOffcanvas";
+import { FavsOffCanvas } from "../../Components/FavsOffCanvas/FavsOffCanvas";
 
 export function GifPage({ params }) {
   const { id } = params;
