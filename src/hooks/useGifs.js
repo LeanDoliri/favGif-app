@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getGifs } from "../services/apiGif";
 
-export function useGifs({ keyword } = { keyword: "random" }) {
+export function useGifs({ keyword } = { keyword: null }) {
   const [loading, setLoading] = useState(false);
   const [gifs, setGifs] = useState([]);
 
