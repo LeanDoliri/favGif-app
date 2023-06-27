@@ -9,8 +9,8 @@ export function BtnAddToFavs({ gif }) {
   }
 
   return (
-    <span type="button" className="isInFavs text-nowrap" onClick={handleClick}>
-      ➕❤️
+    <span type="button" className=" fs-5 isInFavs text-nowrap" onClick={handleClick}>
+      🤍
     </span>
   );
 }
@@ -23,8 +23,8 @@ export function BtnDeleteFromFavs({ gif }) {
   }
 
   return (
-    <span type="button" className="isInFavs text-nowrap" onClick={handleClick}>
-      ✅❤️
+    <span type="button" className="fs-5 isInFavs text-nowrap" onClick={handleClick}>
+      ❤️
     </span>
   );
 }
