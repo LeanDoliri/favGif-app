@@ -5,7 +5,7 @@ import { Subtitle } from "../Subtitle/Subtitle";
 import { useFavs } from "../../hooks/useFavs";
 import Masonry from "react-masonry-css";
 import { GifCard } from "../GifCard/GifCard";
-import "./FavsOffCanvas.css";
+import "./FavsOffcanvas.css";
 import { CloseButton } from "react-bootstrap";
 
 export function FavsOffCanvas() {
