@@ -19,9 +19,7 @@ export function GifPage({ params }) {
         </header>
       </Row>
       <Row>
-        <main
-          fluid
-          className="d-flex flex-column align-items-center container-fluid p-3"
+        <main className="d-flex flex-column align-items-center container-fluid p-3"
         >
           {loading ? (
             <Spinner />

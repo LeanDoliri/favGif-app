@@ -19,7 +19,7 @@ export function SearchResults({ params }) {
         </header>
       </Row>
       <Row>
-        <main fluid className="d-flex flex-column align-items-center container-fluid p-0">
+        <main className="d-flex flex-column align-items-center container-fluid p-0">
           <Subtitle
             text={`Resultados de la búsqueda "${decodeURIComponent(
               keyword
