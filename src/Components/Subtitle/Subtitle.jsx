@@ -1,5 +1,3 @@
-import "./Subtitle.css"
-
 export function Subtitle({ text }) {
-  return <h3 className="Subtitle">{text}</h3>;
+  return <h3 className="m-3 fw-medium text-light text-center fw-normal">{text}</h3>;
 }

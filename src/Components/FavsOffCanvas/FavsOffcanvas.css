@@ -1,0 +1,29 @@
+.Favs-btn {
+  background: var(--primary-color);
+  position: fixed;
+  z-index: 9999;
+  right: 0.5em;
+  bottom: 0.5em;
+  transition: all 0.3s ease;
+}
+
+.Favs-btn:hover {
+  scale: 1.1;
+  background: var(--primary-color);
+}
+
+.FavsBtn-positionLeft {
+  right: 405px;
+}
+
+.Favs {
+  background-color: var(--bg-secondary-color);
+}
+
+.ListOfFavs::-webkit-scrollbar {
+  display: none;
+}
+
+.ListOfFavs {
+  gap: 0.5em;
+}

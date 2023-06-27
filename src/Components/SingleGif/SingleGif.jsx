@@ -1,3 +1,4 @@
+import { Col, Container, Image, Row } from "react-bootstrap";
 import { useFavs } from "../../hooks/useFavs";
 import { BtnAddToFavs, BtnDeleteFromFavs } from "../Buttons/Buttons";
 import "./SingleGif.css";
@@ -13,45 +14,47 @@ export function SingleGif({ gif }) {
   const isInFavs = checkGifInFavs({ id: gif.id });
 
   return (
-    <div className="SingleGif">
-      <img src={url} alt={title} />
-      <div className="SingleGif-data">
-        <ul>
-          {title != "" ? (
-            <li>
-              <strong>Title: </strong>
-              {title}
-            </li>
-          ) : (
-            ""
-          )}
-          {username != "" ? (
-            <li>
-              <strong>Username: </strong>
-              {username}
-            </li>
-          ) : (
-            ""
-          )}
-          {source != "" ? (
-            <li>
-              <strong>Source: </strong>
-              <a href={source} target="_blank">
-                {source}
-              </a>
-            </li>
-          ) : (
-            ""
-          )}
-        </ul>
-        <div className="SingleGif-btn">
-          {isInFavs ? (
-            <BtnDeleteFromFavs gif={gif} />
-          ) : (
-            <BtnAddToFavs gif={gif} />
-          )}
-        </div>
-      </div>
-    </div>
+    <Container>
+      <Row className="flex-column align-items-center">
+        <Col xs={12} md={6}>
+          <Image src={url} alt={title} className="w-100 rounded-top" />
+          <Container className="SingleGif-data d-flex flex-column align-items-start rounded-bottom p-3 m-0">
+            {title != "" ? (
+              <h4 className="text-start fw-normal p-0 m-0">
+                <strong className="fw-bold">Title: </strong>
+                {title}
+              </h4>
+            ) : (
+              ""
+            )}
+            <div>
+              {username != "" ? (
+                <p className="p-0 m-0">
+                  <strong className="fw-bold">Username: </strong>
+                  {username}
+                </p>
+              ) : (
+                ""
+              )}
+              {source != "" ? (
+                <p className="text-break p-0 m-0">
+                  <strong className="fw-bold">Source: </strong>
+                  <a href={source} target="_blank">
+                    {source}
+                  </a>
+                </p>
+              ) : (
+                ""
+              )}
+            </div>
+            {isInFavs ? (
+              <BtnDeleteFromFavs gif={gif} />
+            ) : (
+              <BtnAddToFavs gif={gif} />
+            )}
+          </Container>
+        </Col>
+      </Row>
+    </Container>
   );
 }

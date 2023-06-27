@@ -1,12 +1,4 @@
 :root {
-  font-family: 'Kodchasan', sans-serif;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
   --primary-font: 'Kodchasan', sans-serif;
 
   --text-color: #fcfaff;
@@ -22,7 +14,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color);
 }

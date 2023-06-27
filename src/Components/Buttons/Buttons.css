@@ -1,15 +1,7 @@
-.AddToFavsBtn, .DeleteFromFavs {
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  transition: 100ms;
+.isInFavs {
+  transition: 100ms all;
 }
 
-.AddToFavsBtn:hover, .DeleteFromFavs:hover {
-  scale: 1.1;
+.isInFavs:hover {
+    scale: 1.1;
 }
-
-

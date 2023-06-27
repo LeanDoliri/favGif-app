@@ -1,4 +1,3 @@
-import { AddToFavsIcon, DeleteFromFavsIcon } from "../../assets/Icons";
 import { useFavs } from "../../hooks/useFavs";
 import "./Buttons.css";
 
@@ -10,9 +9,9 @@ export function BtnAddToFavs({ gif }) {
   }
 
   return (
-    <div className="AddToFavsBtn" onClick={handleClick}>
-      <AddToFavsIcon />
-    </div>
+    <span type="button" className="isInFavs text-nowrap" onClick={handleClick}>
+      ➕❤️
+    </span>
   );
 }
 
@@ -24,8 +23,8 @@ export function BtnDeleteFromFavs({ gif }) {
   }
 
   return (
-    <div className="DeleteFromFavs" onClick={handleClick}>
-      <DeleteFromFavsIcon />
-    </div>
+    <span type="button" className="isInFavs text-nowrap" onClick={handleClick}>
+      ✅❤️
+    </span>
   );
 }

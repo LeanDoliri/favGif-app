@@ -1,41 +1,9 @@
-.SingleGif {
-  background-color: var(--bg-secondary-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  border-radius: 6px;
-  outline: 2px solid var(--primary-color);
-}
-
 .SingleGif-data {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1em;
+  gap: 0.5em;
   background: var(--bg-color);
   background: linear-gradient(
     90deg,
     var(--primary-color) 0%,
     var(--accent-color) 100%
   );
-}
-
-.SingleGif-btn {
-  padding: 1em;
-  width: 10%;
-}
-
-.SingleGif img {
-  border-radius: 6px 6px 0 0;
-  width: 100%;
-}
-
-.SingleGif ul {
-  width: 70%;
-  padding: 0 1em;
-  list-style: none;
-  word-wrap: anywhere;
 }

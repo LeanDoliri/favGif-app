@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route } from "wouter";
 import { Home } from "./pages/Home/Home";
 import { SearchResults } from "./pages/SearchResults/SearchResults";

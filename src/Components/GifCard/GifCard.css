@@ -1,19 +1,4 @@
-.GifCard {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  outline: 2px solid var(--primary-color);
-  border-radius: 6px;
-}
-
-.GifCard a {
-  height: 100%;
-}
-
 .GifCard-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 1em;
   background: var(--bg-color);
   background: linear-gradient(
@@ -21,23 +6,4 @@
     var(--primary-color) 0%,
     var(--accent-color) 100%
   );
-  padding: 0.2em;
-}
-
-.GifImg {
-  cursor: pointer;
-  max-width: 100%;
-  height: 100%;
-}
-
-.TitleGif {
-  max-width: 100%;
-  color: var(--bg-color);
-  font-size: 0.7em;
-  text-align: left;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 0;
-  padding: 0;
 }

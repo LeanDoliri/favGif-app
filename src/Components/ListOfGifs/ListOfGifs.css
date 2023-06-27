@@ -1,8 +1,5 @@
 .ListOfGifs {
-  max-width: 1080px;
   gap: 0.5em;
-  padding: 0 0 1em 0;
-  margin: 0.5em;
 }
 
 @media only screen and (max-width: 600px) {

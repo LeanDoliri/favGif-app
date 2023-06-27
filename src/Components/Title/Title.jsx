@@ -3,7 +3,7 @@ import "./Title.css"
 export function Title() {
   return (
     <a href="/">
-      <h1 className="Title">❤️ FavGif ❤️</h1>
+      <h1 className="text-center fw-bold m-3">❤️ FavGif ❤️</h1>
     </a>
   );
 }

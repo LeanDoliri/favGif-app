@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 import "./Search.css";
-import searchIcon from "../../assets/search.svg"
+import { Form, FormControl, InputGroup } from "react-bootstrap";
 
 export function Search() {
   const [keyword, setKeword] = useState();
 
-  // eslint-disable-next-line
   const [path, pushLocation] = useLocation();
 
   const handleSubmit = (e) => {
@@ -21,17 +20,15 @@ export function Search() {
   };
 
   return (
-    <form className="Search" onSubmit={handleSubmit}>
-      <input
-        className="Search-Input"
-        type="text"
-        value={keyword}
-        placeholder="Search gifs..."
-        onChange={handleChange}
-      />
-      <button className="Search-Btn">
-        <img src={searchIcon} alt="searchIcon" />
-      </button>
-    </form>
+    <Form onSubmit={handleSubmit} className="Search d-flex justify-content-center">
+      <InputGroup>
+        <InputGroup.Text>🔎</InputGroup.Text>
+        <FormControl
+          placeholder="Search gifs..."
+          onChange={handleChange}
+          value={keyword}
+        />
+      </InputGroup>
+    </Form>
   );
 }

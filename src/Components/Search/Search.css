@@ -1,9 +1,5 @@
 .Search {
-  display: flex;
-  gap: 0.5em;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  width: 70%;
 }
 
 .Search-Input {
@@ -15,6 +11,7 @@
   outline: none;
   border-radius: 6px;
   padding: 0.2em;
+  width: 50%;
 }
 
 .Search-Input:focus {
