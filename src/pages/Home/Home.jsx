@@ -1,17 +1,14 @@
-import { useGifs } from "../../hooks/useGifs";
 import { Search } from "../../Components/Search/Search";
 import { Title } from "../../Components/Title/Title";
 import { Subtitle } from "../../Components/Subtitle/Subtitle";
 import { ListOfGifs } from "../../Components/ListOfGifs/ListOfGifs";
-import { Container, Row, Spinner } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { FavsOffCanvas } from "../../Components/FavsOffCanvas/FavsOffCanvas";
-import { TrendingSearch } from "../../Components/TrendingSearch/TrendingSearch";
 import { useTrending } from "../../hooks/useTrending";
-
+import { TrendingSearch } from "../../Components/TrendingSearch/TrendingSearch";
 
 export function Home() {
-  const { loading, gifs } = useTrending();
-
+  const { loadingNextPage, gifs, setPage } = useTrending();
   return (
     <Container>
       <Row>
@@ -24,7 +21,11 @@ export function Home() {
         <main className="d-flex flex-column align-items-center container-fluid p-0">
           <Subtitle text={"Tendencias: "} />
           <TrendingSearch />
-          {loading ? "" : <ListOfGifs gifs={gifs} />}
+          <ListOfGifs
+            gifs={gifs}
+            setPage={setPage}
+            loadingNextPage={loadingNextPage}
+          />
         </main>
       </Row>
       <FavsOffCanvas />

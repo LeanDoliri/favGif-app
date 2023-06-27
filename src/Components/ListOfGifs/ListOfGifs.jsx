@@ -1,10 +1,14 @@
 import Masonry from "react-masonry-css";
 import { GifCard } from "../GifCard/GifCard";
 import "./ListOfGifs.css";
-import { Container } from "react-bootstrap";
+import { Button, Container, Spinner } from "react-bootstrap";
 
-export function ListOfGifs({ gifs }) {
+export function ListOfGifs({ loadingNextPage, gifs, setPage }) {
   const breakpointCols = { default: 5, 600: 2 };
+
+  function handleClick() {
+    setPage((prevPage) => prevPage + 1);
+  }
 
   return (
     <Container className="p-0">
@@ -17,6 +21,12 @@ export function ListOfGifs({ gifs }) {
           <GifCard key={gif.id} gif={gif} />
         ))}
       </Masonry>
+      <div className=" d-flex flex-column align-items-center">
+        {loadingNextPage ? <Spinner /> : ""}
+        <Button onClick={handleClick} className="VerMas-btn border-0 w-50 my-3">
+          Ver más
+        </Button>
+      </div>
     </Container>
   );
 }

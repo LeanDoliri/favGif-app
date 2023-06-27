@@ -14,9 +14,9 @@ export function GifCard({ gif }) {
 
   const isInFavs = checkGifInFavs({ id: gif.id });
 
-  const [path, pushLocation] = useLocation();
+  const [location, navigate] = useLocation();
   function handleClick() {
-    pushLocation(`/gif/${id}`);
+    navigate(`/gif/${id}`, {replace: false});
   }
 
   return (

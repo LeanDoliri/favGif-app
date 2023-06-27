@@ -3,13 +3,13 @@ import { Search } from "../../Components/Search/Search";
 import { Title } from "../../Components/Title/Title";
 import { Subtitle } from "../../Components/Subtitle/Subtitle";
 import { ListOfGifs } from "../../Components/ListOfGifs/ListOfGifs";
-import { Container, Row, Spinner } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { FavsOffCanvas } from "../../Components/FavsOffCanvas/FavsOffCanvas";
 import { TrendingSearch } from "../../Components/TrendingSearch/TrendingSearch";
 
 export function SearchResults({ params }) {
   const { keyword } = params;
-  const { loading, gifs } = useGifs({ keyword });
+  const { loadingNextPage, gifs, setPage } = useGifs({ keyword });
 
   return (
     <Container>
@@ -28,7 +28,11 @@ export function SearchResults({ params }) {
               keyword
             )}": `}
           />
-          {loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}
+          <ListOfGifs
+            gifs={gifs}
+            setPage={setPage}
+            loadingNextPage={loadingNextPage}
+          />
         </main>
       </Row>
       <FavsOffCanvas />

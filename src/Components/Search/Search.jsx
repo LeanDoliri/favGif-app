@@ -6,12 +6,12 @@ import { Form, FormControl, InputGroup } from "react-bootstrap";
 export function Search() {
   const [keyword, setKeword] = useState();
 
-  const [path, pushLocation] = useLocation();
+  const [location, navigate] = useLocation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (keyword) {
-      pushLocation(`/search/${keyword}`);
+      navigate(`/search/${keyword}`, {repalce: true});
     }
   };
 
@@ -20,7 +20,10 @@ export function Search() {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="Search d-flex justify-content-center">
+    <Form
+      onSubmit={handleSubmit}
+      className="Search d-flex justify-content-center"
+    >
       <InputGroup>
         <InputGroup.Text>🔎</InputGroup.Text>
         <FormControl

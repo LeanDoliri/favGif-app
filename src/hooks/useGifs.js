@@ -1,24 +1,31 @@
 import { useEffect, useState } from "react";
 import { getGifs } from "../services/apiGif";
 
-export function useGifs({ keyword } = { keyword: null }) {
+export function useGifs({ keyword }) {
   const [loading, setLoading] = useState(false);
+  const [loadingNextPage, setLoadingNextPage] = useState(false);
+  const [page, setPage] = useState(0);
   const [gifs, setGifs] = useState([]);
 
   useEffect(() => {
-      setLoading(true);
+    setLoading(true);
 
-      const keywordToUse =
-        keyword || localStorage.getItem("lastKeyword") || "random";
+    getGifs({ keyword }).then((gifs) => {
+      setGifs(gifs);
+      setLoading(false);
+    });
+  }, [keyword]);
 
-      getGifs({ keyword: keywordToUse }).then((gifs) => {
-        setGifs(gifs);
-        setLoading(false);
-        localStorage.setItem("lastKeyword", keyword);
-      });
-    },
-    [keyword]
-  );
+  useEffect(() => {
+    if (page === 0) return;
 
-  return { loading, gifs };
+    setLoadingNextPage(true);
+
+    getGifs({ keyword, page }).then((nextGifs) => {
+      setGifs((prevGifs) => prevGifs.concat(nextGifs));
+      setLoadingNextPage(false);
+    });
+  }, [keyword, page]);
+
+  return { loading, loadingNextPage, gifs, setPage };
 }

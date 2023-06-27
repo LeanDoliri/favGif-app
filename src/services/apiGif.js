@@ -1,7 +1,10 @@
 const apiKey = "i9G4hj7FcpIiHkedYC5770WxoXMJuij5";
+const limit = 25;
 
-export async function getGifs({ keyword = "random" } = {}) {
-  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=50&offset=0&rating=g&lang=es`;
+export async function getGifs({ keyword = "random", page = 0 } = {}) {
+  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=${limit}&offset=${
+    page * limit
+  }&rating=g&lang=es`;
 
   const res = await fetch(apiURL);
   const resJson = await res.json();
@@ -42,8 +45,10 @@ export async function getTrendingSearch() {
   return data;
 }
 
-export async function getTrending() {
-  const apiURL = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25&offset=0&rating=g&bundle=messaging_non_clips`;
+export async function getTrending({ page = 0 } = {}) {
+  const apiURL = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${limit}&offset=${
+    page * limit
+  }&rating=g&bundle=messaging_non_clips`;
 
   const res = await fetch(apiURL);
   const resJson = await res.json();

@@ -2,6 +2,16 @@
   gap: 0.5em;
 }
 
+.VerMas-btn{
+  background-color: var(--primary-color);
+  transition: all 250ms;
+}
+
+.VerMas-btn:hover{
+  background-color: var(--accent-color);
+  scale: 1.1;
+}
+
 @media only screen and (max-width: 600px) {
   .ListOfGifs {
     max-width: 100%;
