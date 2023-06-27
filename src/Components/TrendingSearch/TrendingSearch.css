@@ -1,0 +1,9 @@
+.BadgeTrending {
+  transition: all 100ms;
+  background-color: var(--bg-secondary-color);
+}
+
+.BadgeTrending:hover {
+  background-color: var(--primary-color);
+  scale: 1.1;
+}

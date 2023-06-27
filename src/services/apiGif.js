@@ -15,7 +15,7 @@ export async function getGifs({ keyword = "random" } = {}) {
   return gifs;
 }
 
-export async function getGifById ({ id } = {}) {
+export async function getGifById({ id } = {}) {
   const apiURL = `https://api.giphy.com/v1/gifs/${id}?api_key=${apiKey}`;
 
   const res = await fetch(apiURL);
@@ -26,8 +26,18 @@ export async function getGifById ({ id } = {}) {
     title: data.title,
     url: data.images.downsized_medium.url,
     username: data.username,
-    source: data.source
-  }
+    source: data.source,
+  };
 
   return gif;
+}
+
+export async function getTrendingSearch() {
+  const apiUrl = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
+
+  const res = await fetch(apiUrl);
+  const resJson = await res.json();
+  const { data } = resJson;
+
+  return data;
 }

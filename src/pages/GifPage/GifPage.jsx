@@ -5,6 +5,7 @@ import { Subtitle } from "../../Components/Subtitle/Subtitle";
 import { SingleGif } from "../../Components/SingleGif/SingleGif";
 import { Container, Row, Spinner } from "react-bootstrap";
 import { FavsOffCanvas } from "../../Components/FavsOffCanvas/FavsOffCanvas";
+import { TrendingSearch} from "../../Components/TrendingSearch/TrendingSearch";
 
 export function GifPage({ params }) {
   const { id } = params;
@@ -19,8 +20,7 @@ export function GifPage({ params }) {
         </header>
       </Row>
       <Row>
-        <main className="d-flex flex-column align-items-center container-fluid p-3"
-        >
+        <main className="d-flex flex-column align-items-center container-fluid p-3">
           {loading ? (
             <Spinner />
           ) : (
@@ -29,6 +29,9 @@ export function GifPage({ params }) {
               <SingleGif gif={gif} />
             </>
           )}
+
+          <Subtitle text={"Tendencias: "} />
+          <TrendingSearch />
         </main>
       </Row>
       <FavsOffCanvas />
