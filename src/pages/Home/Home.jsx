@@ -24,7 +24,7 @@ export function Home() {
         <main className="d-flex flex-column align-items-center container-fluid p-0">
           <Subtitle text={"Tendencias: "} />
           <TrendingSearch />
-          {loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}
+          {loading ? "" : <ListOfGifs gifs={gifs} />}
         </main>
       </Row>
       <FavsOffCanvas />
