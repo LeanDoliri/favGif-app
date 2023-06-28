@@ -33,6 +33,7 @@ export function FavsOffCanvas() {
         className="Favs"
         placement="end"
         show={show}
+        onHide={handleShow}
       >
         <Offcanvas.Header className="py-0 px-3">
           <Offcanvas.Title>
