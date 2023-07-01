@@ -11,9 +11,3 @@
   background-color: var(--accent-color);
   scale: 1.1;
 }
-
-@media only screen and (max-width: 600px) {
-  .ListOfGifs {
-    max-width: 100%;
-  }
-}

@@ -1,5 +1,3 @@
-import "./Title.css"
-
 export function Title() {
   return (
     <a href="/">

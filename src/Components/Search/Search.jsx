@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
-import "./Search.css";
 import { Form, FormControl, InputGroup } from "react-bootstrap";
 
 export function Search() {
@@ -11,7 +10,7 @@ export function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (keyword) {
-      navigate(`/search/${keyword}`, {repalce: true});
+      navigate(`/search/${keyword}`);
     }
   };
 
