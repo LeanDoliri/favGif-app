@@ -14,7 +14,7 @@ export function useTrending() {
       setGifs(gifs);
       setLoading(false);
     });
-  }, [page]);
+  }, []);
 
   useEffect(() => {
     if (page === 0 ) return 
